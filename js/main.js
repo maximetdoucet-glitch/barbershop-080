@@ -24,6 +24,8 @@
     document.body.style.overflow = mobile.classList.contains('is-open') ? 'hidden' : '';
   });
   mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+  const mobileClose = document.getElementById('nav-mobile-close');
+  if (mobileClose) mobileClose.addEventListener('click', closeMobile);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobile.classList.contains('is-open')) closeMobile();
   });

@@ -366,18 +366,68 @@ a:hover { color: var(--gold); }
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   flex-direction: column;
+  z-index: 110;
+  pointer-events: auto;
+}
+.nav__mobile.is-open { display: flex; }
+
+.nav__mobile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.nav__mobile-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--ink);
+}
+.nav__mobile-brand img {
+  width: 28px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+}
+.nav__mobile-brand span {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.nav__mobile-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+}
+.nav__mobile-close svg { width: 18px; height: 18px; }
+.nav__mobile-close:hover { border-color: var(--gold); color: var(--gold); }
+
+.nav__mobile-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.25rem;
+  gap: 2rem;
   font-family: var(--display);
   font-weight: 800;
   font-size: 1.7rem;
   letter-spacing: .18em;
-  z-index: 99;
-  pointer-events: auto;
+  padding: 2rem 1.5rem;
 }
-.nav__mobile a { color: var(--ink); }
-.nav__mobile a:hover { color: var(--gold); }
+.nav__mobile-links a { color: var(--ink); }
+.nav__mobile-links a:hover { color: var(--gold); }
 .nav__mobile-cta {
   background: var(--gold);
   color: #111 !important;
@@ -385,7 +435,6 @@ a:hover { color: var(--gold); }
   border-radius: 999px;
   margin-top: 1rem;
 }
-.nav__mobile.is-open { display: flex; }
 
 /* =========================================================
    Hero (multi-video rotator)
